@@ -8,6 +8,10 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import org.junit.Assert;
+
+import java.util.List;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
@@ -37,7 +41,8 @@ public class LionTest {
     @Test
     public void getKittensTest() throws Exception {
         Lion localLion = new Lion("Самец", feline);
+        Mockito.when(feline.getKittens()).thenReturn(1);
         localLion.getKittens();
-        Mockito.verify(feline, Mockito.times(1)).getKittens();
+        Assert.assertEquals(1, localLion.getKittens());
     }
 }
