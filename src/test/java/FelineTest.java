@@ -21,7 +21,6 @@ public class FelineTest {
 
     @Test
     public void getKittens1Returns1() {
-        feline.getKittens(1);
         Assert.assertEquals(1, feline.getKittens(1));
     }
 
@@ -33,8 +32,6 @@ public class FelineTest {
 
     @Test
     public void getFamilyTest() {
-        feline.getFamily();
-        Mockito.verify(feline, Mockito.times(1)).getFamily();
         Assert.assertEquals("Кошачьи", feline.getFamily());
     }
 

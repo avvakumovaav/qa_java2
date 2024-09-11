@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 @RunWith(Parameterized.class)
@@ -38,8 +37,6 @@ public class LionParametrizedTest {
     @Test
     public void doesHaveManeTest() throws Exception {
         Lion lion = new Lion(sex, feline);
-        Lion lionSpy  = Mockito.spy(lion);
-        lionSpy.doesHaveMane();
-        Assert.assertEquals(haveMane, lionSpy.doesHaveMane());
+        Assert.assertEquals(haveMane, lion.doesHaveMane());
     }
 }

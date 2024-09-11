@@ -42,7 +42,6 @@ public class LionTest {
     public void getKittensTest() throws Exception {
         Lion localLion = new Lion("Самец", feline);
         Mockito.when(feline.getKittens()).thenReturn(1);
-        localLion.getKittens();
         Assert.assertEquals(1, localLion.getKittens());
     }
 }

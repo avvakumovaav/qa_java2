@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -14,11 +13,9 @@ public class CatTest {
     @Mock
     Feline feline;
 
-    @Spy
-    Cat cat = new Cat(feline);
-
     @Test
     public void getSoundTest() {
+        Cat cat = new Cat(feline);
         cat.getSound();
         Assert.assertEquals("Мяу", cat.getSound());
     }
